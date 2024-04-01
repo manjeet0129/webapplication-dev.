@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Javascript Validation</title>
+<script language="javascript">
+function val()
+{
+   var a=f1.t1.value;
+   var b=parseInt(f1.t2.value);
+   var c=f1.t3.value;
+   var d=f1.t4.value;
+   if(a==""||b==""||c==""||d=="")
+      alert("Please enter information in textboxes");
+   else if(isNaN(b)||b<=0)
+      alert("Please enter proper rollno");
+   else if(c.length<6)
+      alert("Password must be atleast 6 characters long");
+   else if(c!=d)
+      alert("Password must match");
+   else
+      alert("Information submitted successfully");
+}
+</script>
+</head>
+<body>
+<h1>FYBsc(IT) Registration Form</h1>
+<form name="f1">
+<table>
+<tr>
+<td>Enter your Name</td>
+<td><input type="text" name="t1"></td>
+</tr>
+<tr>
+<td>Enter your Roll No</td>
+<td><input type="text" name="t2"></td>
+</tr>
+<tr>
+<td>Enter Your Password</td>
+<td><input type="password" name="t3"></td>
+</tr>
+<tr>
+<td>Retype Your Password again</td>
+<td><input type="password" name="t4"></td>
+</tr>
+<tr>
+<td colspan="2"><input type="submit" value="Submit" onClick="val()"></td>
+<td colspan="2"><input type="reset" value="Clear"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

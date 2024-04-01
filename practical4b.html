@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>registration form</title>
+<style>
+body {
+    background-color: pink;
+}
+</style>
+</head>
+<body>
+<form name="p1" method="post">
+<h1><center>Registration form</center></h1>
+<table>
+<tr>
+<td>Enter your name:</td>
+<td><input type="text" name="t1" size="30" maxlength="15" required></td>
+</tr>
+<tr>
+<td>Enter your home address:</td>
+<td><textarea name="addr" rows="4" cols="40"></textarea></td>
+</tr>
+<tr>
+<td>Select your city:</td>
+<td>
+    <select name="city">
+        <option value="mumbai">Mumbai</option>
+        <option value="pune">pune</option>
+        <option value="vadodara">vadodara</option>
+        <option value="nashik">nashik</option>
+    </select>
+</td>
+</tr>
+<tr>
+<td>Enter your country name:</td>
+<td><input type="text" name="country" value="India"></td>
+</tr>
+<tr>
+<td>Select your birth date:</td>
+<td><input type="date" name="birthdate"></td>
+</tr>
+<tr>
+<td>Select your Gender:</td>
+<td>
+    <input type="radio" name="gender" value="male" checked> Male<br>
+    <input type="radio" name="gender" value="female"> Female<br>
+</td>
+</tr>
+<tr>
+<td>Select your qualification:</td>
+<td>
+    <input type="checkbox" name="c1" value="SSC"> SSC<br>
+    <input type="checkbox" name="c2" value="HSC"> HSC<br>
+    <input type="checkbox" name="c3" value="graduate"> Graduate<br>
+    <input type="checkbox" name="c4" value="post graduate"> Post Graduate<br>
+</td>
+</tr>
+<tr>
+<td>Enter your password:</td>
+<td><input type="password" name="password"></td>
+</tr>
+<tr>
+<td><input type="submit" value="Submit"></td>
+<td><input type="reset" value="Clear"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

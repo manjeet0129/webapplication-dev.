@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Factorial of a number</title>
+</head>
+<body>
+<form method="post" action="Fact.php">
+Enter a number: <input type="text" name="n1"><br>
+<input type="submit" value="Factorial">
+</form>
+</body>
+</html>
+
+Fact.php
+<?php
+$n1=(int)$_POST['n1'];
+$fact=1;
+for($i=1;$i<=$n1;$i++)
+{
+$fact=$fact*$i;
+}
+echo "Factorial of ".$n1." is: ".$fact;
+?>
+
+
