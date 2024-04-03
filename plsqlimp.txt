@@ -1,0 +1,103 @@
+--1.Create an employee table using columns
+emp_no, emp_name, hire_date, salary,
+dept_id, and insert any 5 values in the table
+and display that table.
+
+CREATE TABLE employe (
+    emp_no NUMBER,
+    emp_name VARCHAR2(50),
+    emp_post VARCHAR2(20), -- Corrected column name
+    hire_date DATE,
+    salary NUMBER,
+    dept_id NUMBER
+);
+INSERT INTO employe (emp_no, emp_name, emp_post, hire_date, salary, dept_id) VALUES (1, 'John Doe','manager', TO_DATE('2022-01-15', 'YYYY-MM-DD'), 50000, 101); 
+INSERT INTO employe (emp_no, emp_name, emp_post, hire_date, salary, dept_id) VALUES (2, 'Jane Smith','hr', TO_DATE('2021-08-20', 'YYYY-MM-DD'), 60000, 102); 
+INSERT INTO employe (emp_no, emp_name, emp_post, hire_date, salary, dept_id) VALUES (3, 'Michael Johnson','hr', TO_DATE('2023-03-10', 'YYYY-MM-DD'), 55000, 103); 
+INSERT INTO employe (emp_no, emp_name, emp_post, hire_date, salary, dept_id) VALUES (4, 'Emily Brown','hr', TO_DATE('2022-11-05', 'YYYY-MM-DD'), 52000, 104); 
+INSERT INTO employe (emp_no, emp_name, emp_post, hire_date, salary, dept_id) VALUES (5, 'David Wilson','hr', TO_DATE('2020-05-30', 'YYYY-MM-DD'), 58000, 105); 
+
+SELECT * FROM employe;
+
+--2.write a pl/sql block to print name & hire date
+of an employee who is working as manager
+and earn salary >25000;
+
+DECLARE
+    v_counter NUMBER := 1;
+    v_sum NUMBER := 0;
+BEGIN
+    WHILE v_counter <= 10 LOOP
+        v_sum := v_sum + v_counter;
+        v_counter := v_counter + 1;
+    END LOOP;
+    
+    DBMS_OUTPUT.PUT_LINE('Sum of numbers from 1 to 10: ' || v_sum);
+END;
+/
+
+
+--3.write a pl/sql block to print a sum of 1 to 10
+numbers using a while loop.
+
+DECLARE
+    i INT := 0;
+    total INT := 0;
+BEGIN
+    WHILE i < 10 LOOP
+        total := total + i;
+        i := i + 1; 
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE('Total: ' || total);
+END;
+/
+
+
+--4.Write a PL/SQL block to print salary as high
+if it is greater than 20000 moderate if it is
+between 10000 to 20000 and low if it is less
+than 10000 the salary has been taken as an
+input of a specific employee whose employee
+ID is accepted by the user.
+
+DECLARE
+    v_emp_name employe.emp_name%TYPE;
+    v_hire_date employe.hire_date%TYPE;
+BEGIN
+    FOR emp_rec IN (SELECT emp_name, hire_date
+                    FROM employe
+                    WHERE emp_post = 'manager'
+                    AND salary > 25000)
+    LOOP
+        v_emp_name := emp_rec.emp_name;
+        v_hire_date := emp_rec.hire_date;
+        DBMS_OUTPUT.PUT_LINE('Employee Name: ' || v_emp_name || ', Hire Date: ' || TO_CHAR(v_hire_date, 'DD-MON-YYYY'));
+    END LOOP;
+END;
+/
+
+--5.Write a sequence as 10 20, 30...100 bind it
+with a table product (product number, product
+name).Write a sequence as 10 20, 30...100 bind it
+with a table product (product number, product
+name).
+
+Declare
+empno int;
+salary int;
+begin
+empno:=&empno;
+select salary into salary from employe
+where empid=empno;
+if salary>20000 than
+dbms_output.put_line('salary is high');
+elsif salary>=10000 and salary<=20000 then
+dbms_output.put_line('salary is moerate');
+if salary>=20000 than
+dbms_output.put_line('salary is low');
+end if;
+end;
+/
+
+
+
